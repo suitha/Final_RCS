@@ -111,6 +111,7 @@
 		
 		
 		#$raw_results = mysqli_query ($connection, $raw_result);
+		print "SK";
 		echo "<table border= '1'>
 				<tr>
 					<td>Wine ID</td>
