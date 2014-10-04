@@ -4,27 +4,14 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-  <title>Regions and Wineries</title>
+  <title>Wine Details</title>
 <body>
-
 <table border= 1>
-<!--BEGIN WINESTORE -->
-	<tr>
-	<!--BEGIN WINEID -->
-		<td>{WINE_ID}</td>
-	
-	<!-- END WINEID -->
-		<td>{WINE_NAME}</td>
-		<td>{VARIETY}</td>
-		<td>{YEAR}</td>
-		<td>{WINERY_NAME}</td>
-		<td>{REGION}</td>
-		<td>{STOCK}</td>
-		<td>{CUSTOMER}</td>
-		<td>{COST}</td>
-	</tr>
-	<!-- END WINESTORE -->
+<tr><th>Wine ID<th>Wine Name<th>Wine Variety<th>Year<th>Winery Name<th>Region<th>Stock<th>No.Of Customer<th>Cost
+<!-- BEGIN WINESTORE -->
+<tr><td>{WINEID}<td>{WINENAME}<td>{WINEVARIETY}<td>{YEAR}<td>{WINERYNAME}<td>{REGION}<td>{STOCK}<td>{CUSTOMER}<td>{COST}
+    
+<!-- END WINESTORE -->
 </table>
-
 </body>
 </html>

@@ -9,25 +9,19 @@
 <?php
 
 	set_include_path('C:/wamp/bin/php/php5.5.12/pear');
-	require_once "HTML/Template/IT.php";
 	require_once "DB.php";
-	require_once "db2.inc";
+	require "db2.inc";
 
-	$template = new HTML_Template_IT (".");
-	$template -> loadTemplatefile("PEAR_IT.tpl", true, true);
-	$username = "root";
-	$password = "root25";
-	$hostname = "localhost";
-	$dbname = "winestore";
+
 	#require_once ("C:/wamp/bin/php/php5.5.12/pear/DB.php");
 	#ini_set ('display_errors', true);
 	
-	$dsn = "mysql://{$username}:{$password}@{$hostname}/{$dbname}";
-	#$DB = new DB();
-	$connection=@DB::connect($dsn);
+	$dsn = "mysql://root:root25@localhost/winestore";
+	$DB = new DB();
+	$connection=$DB->connect($dsn);
 	
-	 /* if (@DB ::isError($connection))
-      die($connection->getMessage( )); */
+	 if ($DB->isError($connection))
+      die($connection->getMessage( ));
  
 
 	#$connection = mysqli_connect("localhost", "root", "123456", "winestore");
@@ -109,10 +103,10 @@
 
 										
 						
-		 $raw_results = $connection->query($raw_result);
+		 $raw_results = ($connection->query($raw_result));
 		 
-		 /* if (@DB::isError($raw_results))
-			die ($raw_results->getMessage( )); */
+		 if ($DB->isError($raw_results))
+			die ($raw_results->getMessage( ));
 		
 		
 		
@@ -130,7 +124,7 @@
 					<td>Cost</td>
 				</tr>" ;
 		
-		while($regionrow = $raw_results->fetchRow(DB_FETCHMODE_ASSOC)){
+		while($raw_results->fetchInto($row,DB_FETCHMODE_ASSOC)){
 		#while($row = mysqli_fetch_array($raw_results)){
 			
 			/*foreach($row as $wine_id)
@@ -141,25 +135,24 @@
 			print "\n";
 			print "SK";*/
 			
-			$template->setCurrentBlock("WINESTORE");	
-			$template->setVariable("WINE_ID", $regionrow['wine_id']);
-			$template->setVariable("WINE_NAME", $regionrow['wine_name']);
-			$template->setVariable("VARIETY", $regionrow['variety']);
-			$template->setVariable("YEAR", $regionrow['year']);
-			$template->setVariable("WINERY_NAME", $regionrow['winery_name']);
-			$template->setVariable("REGION", $regionrow['region_name']);
-			$template->setVariable("STOCK", $regionrow['on_hand']);
-			$template->setVariable("CUSTOMER", $regionrow['cust']);
-			$template->setVariable("COST", $regionrow['cost']);
-		
-			$template->parseCurrentBlock();
-					
+			echo "<tr>";
+			echo "<td>".$row['wine_id']."</td>";
+			echo "<td>".$row['wine_name']."</td>";
+			echo "<td>".$row['variety']."</td>";
+			echo "<td>".$row['year']."</td>";
+			echo "<td>".$row['winery_name']."</td>";
+			echo "<td>".$row['region_name']."</td>";
+			echo "<td>".$row['on_hand']."</td>";
+			echo "<td>".$row['cust']."</td>";
+			echo "<td>".$row['cost']."</td>";
+			echo "</tr>";
+					  
 		}
-		echo "</table>";
-		 $template -> show();
+		 echo "</table>";
+		 
 		 #mysqli_close($connection);
 
-       #$connection -> disconnect();
+       
          
     
    

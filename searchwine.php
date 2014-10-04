@@ -3,11 +3,11 @@
 		<title>
 			Search for Wine
 		</title>
-	<script src="validation.js" type="text/javascript">
+	<script type="text/javascript" src= "validation.js">
 </script>
 	</head>
 	<body>
-		<form onsubmit= "return myFunction()" action= "peardb.php" method= "GET">
+		<form name= "form" onsubmit= "return myFunction()" action= "search.php" method= "GET">
 			<table border = "0" cellpadding = "5">
 				<tr>
 					<td bgcolor="#DCDCDC">
@@ -85,16 +85,16 @@
 				</tr>
 				<tr>
 					<td bgcolor="#DCDCDC">
-						Start Year: 
+						Minimum Cost $: 
 					</td>
 					<td>
-						<input type = "text" name = "mincost" id= "minyear"/>
+						<input type = "text" name = "mincost" id= "mincost"/>
 					</td>
 					<td bgcolor="#DCDCDC">
-						End Year: 
+						Maximum Cost $: 
 					</td>
 					<td>
-						<input type = "text" name = "maxcost" id= "maxyear"/>
+						<input type = "text" name = "maxcost" id= "maxcost"/>
 					</td>
 				</tr>
 				<tr>

@@ -5,21 +5,17 @@ function myFunction() {
   var minCost = document.getElementById("mincost").value;
   var maxCost = document.getElementById("maxcost").value;
   
-  var message = document.getElementById('confirmMessage');
-  var message1 = document.getElementById('confirmMessage1');
-  var goodColor = "#66cc66";
-  var badColor = "#ff6666";
   
-  if (minYear > maxYear) 
+if (minYear > maxYear) 
 {
-alert ("Min Year is greater than Max Year");
+alert ("Start Year is greater than End Year");
 document.getElementById("minyear").select();
 document.getElementById("minyear").focus();
 return false;
 }
-if (minCost > maxCost) 
+else if (minCost > maxCost) 
 {
-alert ("Min Cost is greater than Max Cost");
+alert ("Minimum Cost is greater than Maximum Cost");
 document.getElementById("mincost").select();
 document.getElementById("mincost").focus();
 return false;
