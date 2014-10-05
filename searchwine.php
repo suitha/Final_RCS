@@ -3,11 +3,11 @@
 		<title>
 			Search for Wine
 		</title>
-	<script type="text/javascript" src= "validation.js">
-</script>
+		<script type="text/javascript" src= "validation.js">
+		</script>
 	</head>
 	<body>
-		<form name= "form" onsubmit= "return myFunction()" action= "search.php" method= "GET">
+		<form name= "form" onsubmit= "return myFunction()" action= "pearit.php" method= "GET">
 			<table border = "0" cellpadding = "5">
 				<tr>
 					<td bgcolor="#DCDCDC">
@@ -23,26 +23,26 @@
 					</td>
 					<td>
 						<?php
-						$connect = mysqli_connect ("localhost", "root", "root25", "winestore");
-	
-						if(mysqli_connect_errno()){
-							echo "Failed to connect to MySQL: " . mysqli_connect_error();
-						}
-					
-						$regiondb = mysqli_query($connect, "SELECT * FROM region");
-					
-						echo "<select name = 'region_name'>";
-							
-						while ($region = mysqli_fetch_array($regiondb)){
-							$region_query = $region["region_name"];
-							
-							echo "<option>";
-							echo $region_query;
-							echo "</option>";
-						}
+							$connect = mysqli_connect ("localhost", "root", "root25", "winestore");
+		
+							if(mysqli_connect_errno()){
+								echo "Failed to connect to MySQL: " . mysqli_connect_error();
+							}
 						
-						echo "</select>";
-					?>
+							$regiondb = mysqli_query($connect, "SELECT * FROM region");
+						
+							echo "<select name = 'region_name'>";
+								
+							while ($region = mysqli_fetch_array($regiondb)){
+								$region_query = $region["region_name"];
+								
+								echo "<option>";
+								echo $region_query;
+								echo "</option>";
+							}
+							
+							echo "</select>";
+						?>
 					</td>
 				</tr>
 				<tr>
@@ -99,8 +99,8 @@
 				</tr>
 				<tr>
 					<td colspan = "2" align= "center" >
-					<input type = "submit" value = "Search"/>
-				</td>
+						<input type = "submit" value = "Search"/>
+					</td>
 			</tr>
 			</table>
 		</form>
