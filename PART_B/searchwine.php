@@ -7,7 +7,7 @@
 		</script>
 	</head>
 	<body>
-		<form name= "form" onsubmit= "return myFunction()" action= "peardb.php" method= "GET">
+		<form name= "form" onsubmit= "return myFunction()" action= "search.php" method= "GET">
 			<table border = "0" cellpadding = "5">
 				<tr>
 					<td bgcolor="#DCDCDC">
