@@ -12,6 +12,7 @@
 			//Connect to the MYSQL server
 			$connection = mysqli_connect("localhost", "root", "root25", "winestore");
 				
+			//Getting input 
 			$winename = $_GET['winename'];
 			$wineregion = $_GET['region_name'];
 			$wineryname = $_GET ['wineryname'];
@@ -23,19 +24,21 @@
 			$maxcost = $_GET ['maxcost'];
 				
 			
-			
+			//Display all years
 			if ($minyear == NULL)
 				$minyear = "1970";
 				
 			if ($maxyear == NULL)
 				$maxyear = "1999";
-				
+			
+			//Display all cost
 			if ($mincost == NULL)
 				$mincost = "5";
 				
 			if ($maxcost == NULL)
 				$maxcost = "30";
-					
+			
+			//Display all region
 			if($wineregion == "All")
 				$wineregion = "";	
 					
@@ -120,6 +123,7 @@
 			
 			else
 			{
+				//If results don't exist
 				header('Refresh:5; url=searchwine.php');
 				echo "<h1>No records match your search criteria</h1>";
 			}

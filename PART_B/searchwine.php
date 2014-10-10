@@ -3,12 +3,15 @@
 		<title>
 			Search for Wine
 		</title>
+		<!-- Validation for form -->
 		<script type="text/javascript" src= "validation.js">
 		</script>
 	</head>
 	<body>
+		<!-- Form for PHP file -->
 		<form name= "form" onsubmit= "return myFunction()" action= "search.php" method= "GET">
 			<table border = "0" cellpadding = "5">
+				<!-- Input for Wine Name -->
 				<tr>
 					<td bgcolor="#DCDCDC">
 						Wine Name:
@@ -17,6 +20,7 @@
 						<input type = "text" name = "winename" />
 					</td>
 				</tr>
+				<!-- Select dropdown for Region -->
 				<tr>
 					<td bgcolor="#DCDCDC">
 						Region: 
@@ -45,6 +49,7 @@
 						?>
 					</td>
 				</tr>
+				<!-- Input Winery Name -->
 				<tr>
 					<td bgcolor="#DCDCDC">
 						Winery Name: 
@@ -54,12 +59,14 @@
 					</td>
 				</tr>
 				<tr>
+					<!-- Input Start Year -->
 					<td bgcolor="#DCDCDC">
 						Start Year: 
 					</td>
 					<td>
 						<input type = "text" name = "minyear" id= "minyear"/>
 					</td>
+					<!-- Input for End Year -->
 					<td bgcolor="#DCDCDC">
 						End Year: 
 					</td>
@@ -67,6 +74,7 @@
 						<input type = "text" name = "maxyear" id= "maxyear"/>
 					</td>
 				</tr>
+				<!-- Input for Number of Wines in stock -->
 				<tr>
 					<td bgcolor="#DCDCDC">
 						Number of wines:  
@@ -75,6 +83,7 @@
 						<input type = "text" name = "nowines"/>
 					</td>
 				</tr>
+				<!-- Input for Number of Customers -->
 				<tr>
 					<td bgcolor="#DCDCDC">
 						Number of customers:  
@@ -84,12 +93,14 @@
 					</td>
 				</tr>
 				<tr>
+					<!-- Input for Minimum Cost -->
 					<td bgcolor="#DCDCDC">
 						Minimum Cost $: 
 					</td>
 					<td>
 						<input type = "text" name = "mincost" id= "mincost"/>
 					</td>
+					<!-- Input for Maximum Cost -->
 					<td bgcolor="#DCDCDC">
 						Maximum Cost $: 
 					</td>
@@ -97,11 +108,12 @@
 						<input type = "text" name = "maxcost" id= "maxcost"/>
 					</td>
 				</tr>
+				<!-- Search Button -->
 				<tr>
 					<td colspan = "2" align= "center" >
 						<input type = "submit" value = "Search"/>
 					</td>
-			</tr>
+				</tr>
 			</table>
 		</form>
 	</body>
